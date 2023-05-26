@@ -49,3 +49,7 @@ class Perceptron:
 
         self.weights -= dweights
         self.bias -= dbias
+
+    def train(self, X, y, eps=1e-1, lr=1e-1, epochs=1000):
+        for i in range(epochs):
+            self.finite_diff(X, y, eps, lr, self.mse_cost)
